@@ -1,5 +1,5 @@
 /* =========================================
-   RAMO — Main JavaScript
+   OMR Beauty — Main JavaScript
    ========================================= */
 
 (function () {
