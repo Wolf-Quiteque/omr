@@ -62,6 +62,26 @@
     });
   }
 
+  // --- Mobile Menu ---
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isActive = mobileMenu.classList.toggle('mobile-menu--active');
+      hamburger.classList.toggle('nav__hamburger--active');
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('mobile-menu--active');
+        hamburger.classList.remove('nav__hamburger--active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   // --- Navigation scroll effect ---
   const nav = document.getElementById('nav');
   if (nav) {

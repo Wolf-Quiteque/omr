@@ -32,8 +32,18 @@
       <li><a href="journal.html" class="nav__link" data-link>Journal</a></li>
       <li><a href="philosophy.html" class="nav__link" data-link>About</a></li>
     </ul>
-    <button class="nav__cart" id="cart-toggle">Cart (0)</button>
+    <div style="display: flex; align-items: center; gap: 1.5rem;">
+      <button class="nav__cart" id="cart-toggle">Cart (0)</button>
+      <button class="nav__hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+    </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#featured" class="mobile-menu__link">Collection</a>
+    <a href="journal.html" class="mobile-menu__link" data-link>Journal</a>
+    <a href="philosophy.html" class="mobile-menu__link" data-link>About</a>
+  </div>
 
   <!-- Hero with Video -->
   <section class="hero">
