@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect fill="#e8e8e8" width="800" height="1000"/>
+  <rect fill="#d0d0d0" x="280" y="100" width="240" height="120" rx="4"/>
+  <rect fill="#c5c5c5" x="260" y="220" width="130" height="650" rx="4"/>
+  <rect fill="#c5c5c5" x="410" y="220" width="130" height="650" rx="4"/>
+  <text x="400" y="930" text-anchor="middle" fill="#888" font-family="Helvetica,Arial,sans-serif" font-size="14" letter-spacing="3">GRAPHITE FLOW PANT</text>
+</svg>

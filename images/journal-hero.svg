@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800">
+  <rect fill="#111" width="1920" height="800"/>
+  <rect fill="#1a1a1a" x="100" y="100" width="600" height="600" rx="2"/>
+  <text x="400" y="420" text-anchor="middle" fill="#444" font-family="Helvetica,Arial,sans-serif" font-size="16" letter-spacing="4">JOURNAL IMAGE</text>
+</svg>

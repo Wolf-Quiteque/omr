@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal — OMR Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <span class="loader__logo">OMR</span>
+    <div class="loader__line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition" id="page-transition"></div>
+
+  <!-- Navigation -->
+  <nav class="nav nav--light" id="nav">
+    <a href="index.html" class="nav__logo" data-link>OMR</a>
+    <ul class="nav__links">
+      <li><a href="index.html#featured" class="nav__link" data-link>Collection</a></li>
+      <li><a href="journal.html" class="nav__link" data-link>Journal</a></li>
+      <li><a href="philosophy.html" class="nav__link" data-link>About</a></li>
+    </ul>
+    <button class="nav__cart" id="cart-toggle">Cart (0)</button>
+  </nav>
+
+  <!-- Journal Page -->
+  <main class="journal-page">
+
+    <!-- Journal Hero -->
+    <section class="journal-hero">
+      <div class="container container--narrow">
+        <p class="journal-hero__label t-label">Journal</p>
+        <h1 class="journal-hero__title t-heading-xl reveal-text">The OMR State</h1>
+        <p class="journal-hero__desc fade-in">
+          On presence, fragrance, intention, and the rituals that shape identity.
+        </p>
+      </div>
+    </section>
+
+    <!-- Journal Entries -->
+    <section class="journal-entries">
+      <div class="container">
+
+        <article class="journal-entry fade-in">
+          <div class="journal-entry__image">
+            <img src="assets/images/eaudeparfum4505.jpg" alt="The Invisible Layer">
+          </div>
+          <div class="journal-entry__content">
+            <p class="journal-entry__date">March 2026</p>
+            <h2 class="journal-entry__title">The Invisible Layer</h2>
+            <p class="journal-entry__excerpt">
+              Before the clothes, before the mirror, before the world sees you —
+              there is a scent. The first decision you wear. The one nobody sees
+              but everyone remembers. Fragrance is the invisible layer of identity.
+            </p>
+            <a href="#" class="journal-entry__link">Read</a>
+          </div>
+        </article>
+
+        <article class="journal-entry fade-in">
+          <div class="journal-entry__image">
+            <img src="assets/images/about01f5.jpg" alt="On Presence">
+          </div>
+          <div class="journal-entry__content">
+            <p class="journal-entry__date">February 2026</p>
+            <h2 class="journal-entry__title">On Presence Over Performance</h2>
+            <p class="journal-entry__excerpt">
+              The world rewards loudness. But the people who stay with you
+              are drawn to presence — the quiet certainty of someone who has
+              made peace with who they are. Scent is a declaration of that peace.
+            </p>
+            <a href="#" class="journal-entry__link">Read</a>
+          </div>
+        </article>
+
+        <article class="journal-entry fade-in">
+          <div class="journal-entry__image">
+            <img src="assets/images/Copper_Candle_19_horizontal7a6c.jpg" alt="Ritual of Rest">
+          </div>
+          <div class="journal-entry__content">
+            <p class="journal-entry__date">January 2026</p>
+            <h2 class="journal-entry__title">The Ritual of Rest</h2>
+            <p class="journal-entry__excerpt">
+              Light the candle. Let the copper and warmth fill the room.
+              Rest is not idle — it is the infrastructure of creation.
+              The evening ritual is where tomorrow begins.
+            </p>
+            <a href="#" class="journal-entry__link">Read</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Video Feature -->
+    <section class="video-feature fade-in" style="padding-bottom: var(--space-2xl);">
+      <div class="video-feature__wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/83f4eee21e9f41c584a792b92c8b917f/83f4eee21e9f41c584a792b92c8b917f.HD-1080p-7.2Mbps-62470788a4f0.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--obsidian); color: var(--ivory);">
+    <div class="container">
+      <p class="footer__brand-line">Wear your intention.<br>Live your ritual.</p>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Shop</p>
+          <ul>
+            <li><a href="product.html" data-link>Eau de Parfum</a></li>
+            <li><a href="index.html#featured" data-link>Perfume Oils</a></li>
+            <li><a href="product.html?variant=copper" data-link>Candles</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Brand</p>
+          <ul>
+            <li><a href="philosophy.html" data-link>About OMR</a></li>
+            <li><a href="journal.html" data-link>Journal</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Support</p>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Connect</p>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 OMR Beauty. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top back-to-top--light" id="back-to-top">
+    <a href="#" class="back-to-top__link">Return</a>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer__header">
+      <span class="cart-drawer__title">Your Selection</span>
+      <button class="cart-drawer__close" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-drawer__body">
+      <div class="cart-drawer__empty">
+        <p class="cart-drawer__empty-text">Your selection is empty.</p>
+        <p class="cart-drawer__affirmation">Presence begins with intention.</p>
+      </div>
+    </div>
+    <div class="cart-drawer__footer">
+      <button class="cart-drawer__checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

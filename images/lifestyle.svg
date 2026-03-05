@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="900" viewBox="0 0 1920 900">
+  <rect fill="#1c1c1c" width="1920" height="900"/>
+  <rect fill="#252525" x="200" y="100" width="700" height="700" rx="2"/>
+  <rect fill="#252525" x="1020" y="100" width="700" height="700" rx="2"/>
+  <text x="550" y="470" text-anchor="middle" fill="#444" font-family="Helvetica,Arial,sans-serif" font-size="14" letter-spacing="4">LIFESTYLE</text>
+  <text x="1370" y="470" text-anchor="middle" fill="#444" font-family="Helvetica,Arial,sans-serif" font-size="14" letter-spacing="4">EDITORIAL</text>
+</svg>

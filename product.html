@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTRO Eau de Parfum — OMR Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <span class="loader__logo">OMR</span>
+    <div class="loader__line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition" id="page-transition"></div>
+
+  <!-- Navigation -->
+  <nav class="nav nav--light" id="nav">
+    <a href="index.html" class="nav__logo" data-link>OMR</a>
+    <ul class="nav__links">
+      <li><a href="index.html#featured" class="nav__link" data-link>Collection</a></li>
+      <li><a href="journal.html" class="nav__link" data-link>Journal</a></li>
+      <li><a href="philosophy.html" class="nav__link" data-link>About</a></li>
+    </ul>
+    <button class="nav__cart" id="cart-toggle">Cart (0)</button>
+  </nav>
+
+  <!-- Product Page -->
+  <main class="product-page">
+    <div class="product-layout">
+
+      <!-- Gallery -->
+      <div class="product-gallery">
+        <div class="product-gallery__image">
+          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2bc38d.jpg" alt="INTRO Eau de Parfum">
+        </div>
+        <div class="product-gallery__image">
+          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2b81e8.jpg" alt="INTRO - Packaging">
+        </div>
+        <div class="product-gallery__image">
+          <img src="assets/images/INTRO2_cb5184e5-d4ab-42fd-ad91-ff661ab22c249697.jpg" alt="INTRO - Bottle detail">
+        </div>
+        <div class="product-gallery__image">
+          <img src="assets/images/INTRO3_6a28dbf1-6060-4782-904c-2c07d4865522c38d.jpg" alt="INTRO - Editorial">
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="product-details">
+        <h1 class="product-details__name reveal-text">INTRO</h1>
+        <p class="product-details__tagline fade-in">Eau de Parfum — 50ml</p>
+        <p class="product-details__price fade-in">$125</p>
+
+        <div class="product-details__description fade-in">
+          <p>The first impression. The opening note of intention.</p>
+          <p>INTRO is a statement of arrival — designed for the moment you step into yourself. Luminous, bold, and unmistakably present.</p>
+          <p style="margin-top: 1rem;">This is confidence, distilled.</p>
+        </div>
+
+        <ul class="product-details__specs fade-in">
+          <li>50ml / 1.7 fl. oz. Eau de Parfum</li>
+          <li>Long-lasting sillage</li>
+          <li>Glass bottle with OMR signature cap</li>
+          <li>Crafted with intention</li>
+          <li>Unisex — designed for presence</li>
+        </ul>
+
+        <div class="product-details__ritual fade-in">
+          <p class="product-details__ritual-label">Ritual Use</p>
+          <p class="product-details__ritual-text">Apply to pulse points before the moments that matter — first meetings, quiet evenings, acts of self-renewal.</p>
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="btn-add-cart" id="add-to-cart">Add to Selection — $125</button>
+
+        <!-- Sold Out State -->
+        <div class="sold-out-state" id="sold-out" style="display: none;">
+          <p class="sold-out-state__label">Sold Out</p>
+          <p class="sold-out-state__text">Be notified when INTRO returns.</p>
+          <button class="btn-notify" id="notify-btn">Notify Me</button>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); cursor: pointer;" id="toggle-sold-out">
+          Demo: Toggle sold out state
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <div class="back-to-top back-to-top--light" id="back-to-top">
+    <a href="#" class="back-to-top__link">Return</a>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer__header">
+      <span class="cart-drawer__title">Your Selection</span>
+      <button class="cart-drawer__close" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-drawer__body">
+      <div class="cart-drawer__empty" id="cart-empty">
+        <p class="cart-drawer__empty-text">Your selection is empty.</p>
+        <p class="cart-drawer__affirmation">Scent is the invisible ritual.</p>
+      </div>
+      <div id="cart-items" style="display: none; width: 100%;"></div>
+    </div>
+    <div class="cart-drawer__footer">
+      <button class="cart-drawer__checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Toggle sold out demo
+    const toggleBtn = document.getElementById('toggle-sold-out');
+    const addToCart = document.getElementById('add-to-cart');
+    const soldOut = document.getElementById('sold-out');
+    let isSoldOut = false;
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        isSoldOut = !isSoldOut;
+        addToCart.style.display = isSoldOut ? 'none' : 'block';
+        soldOut.style.display = isSoldOut ? 'block' : 'none';
+      });
+    }
+
+    // Add to cart interaction
+    if (addToCart) {
+      addToCart.addEventListener('click', () => {
+        const cartEmpty = document.getElementById('cart-empty');
+        const cartItems = document.getElementById('cart-items');
+
+        cartItems.innerHTML = `
+          <div style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <p style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">INTRO — Eau de Parfum</p>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.05em;">50ml &nbsp;&middot;&nbsp; $125</p>
+          </div>
+          <p style="margin-top: 2rem; font-size: 0.8rem; font-style: italic; color: #B3A49A; text-align: center;">You chose with intention.</p>
+        `;
+        cartEmpty.style.display = 'none';
+        cartItems.style.display = 'block';
+
+        document.getElementById('cart-drawer').classList.add('cart-drawer--active');
+        document.getElementById('cart-overlay').classList.add('cart-overlay--active');
+        document.getElementById('cart-toggle').textContent = 'Cart (1)';
+      });
+    }
+  </script>
+</body>
+</html>
