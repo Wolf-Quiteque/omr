@@ -193,7 +193,7 @@
       e.preventDefault();
       const input = emailForm.querySelector('input');
       if (input && input.value) {
-        emailForm.innerHTML = '<p style="font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.04em;">Welcome to the state.</p>';
+        emailForm.innerHTML = '<p style="font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.04em;">Bem-vindo ao estado.</p>';
         setTimeout(closeModal, 2000);
       }
     });

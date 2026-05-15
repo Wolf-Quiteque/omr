@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-AO">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTRO Eau de Parfum — OMR Beauty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#D3D3D3">
+  <title>Produto — OMR Beauty Angola</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
@@ -28,21 +29,21 @@
   <nav class="nav nav--light" id="nav">
     <a href="index.html" class="nav__logo" data-link>OMR</a>
     <ul class="nav__links">
-      <li><a href="index.html#featured" class="nav__link" data-link>Collection</a></li>
-      <li><a href="journal.html" class="nav__link" data-link>Journal</a></li>
-      <li><a href="philosophy.html" class="nav__link" data-link>About</a></li>
+      <li><a href="index.html#featured" class="nav__link" data-link>Colecção</a></li>
+      <li><a href="journal.html" class="nav__link" data-link>Jornal</a></li>
+      <li><a href="philosophy.html" class="nav__link" data-link>Sobre</a></li>
     </ul>
-    <div style="display: flex; align-items: center; gap: 1.5rem;">
-      <button class="nav__cart" id="cart-toggle">Cart (0)</button>
-      <button class="nav__hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+    <div class="nav__actions">
+      <button class="nav__cart" id="cart-toggle" aria-label="Abrir sacola">Sacola (0)</button>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html#featured" class="mobile-menu__link" data-link>Collection</a>
-    <a href="journal.html" class="mobile-menu__link" data-link>Journal</a>
-    <a href="philosophy.html" class="mobile-menu__link" data-link>About</a>
+    <a href="index.html#featured" class="mobile-menu__link" data-link>Colecção</a>
+    <a href="journal.html" class="mobile-menu__link" data-link>Jornal</a>
+    <a href="philosophy.html" class="mobile-menu__link" data-link>Sobre</a>
   </div>
 
   <!-- Product Page -->
@@ -50,90 +51,320 @@
     <div class="product-layout">
 
       <!-- Gallery -->
-      <div class="product-gallery">
+      <div class="product-gallery" id="product-gallery">
         <div class="product-gallery__image">
-          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2bc38d.jpg" alt="INTRO Eau de Parfum">
+          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2bc38d.jpg" alt="Produto OMR — vista principal" id="gallery-1">
         </div>
         <div class="product-gallery__image">
-          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2b81e8.jpg" alt="INTRO - Packaging">
+          <img src="assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2b81e8.jpg" alt="Produto OMR — embalagem" id="gallery-2">
         </div>
         <div class="product-gallery__image">
-          <img src="assets/images/INTRO2_cb5184e5-d4ab-42fd-ad91-ff661ab22c249697.jpg" alt="INTRO - Bottle detail">
+          <img src="assets/images/INTRO2_cb5184e5-d4ab-42fd-ad91-ff661ab22c249697.jpg" alt="Produto OMR — detalhe" id="gallery-3">
         </div>
         <div class="product-gallery__image">
-          <img src="assets/images/INTRO3_6a28dbf1-6060-4782-904c-2c07d4865522c38d.jpg" alt="INTRO - Editorial">
+          <img src="assets/images/INTRO3_6a28dbf1-6060-4782-904c-2c07d4865522c38d.jpg" alt="Produto OMR — editorial" id="gallery-4">
         </div>
       </div>
 
       <!-- Details -->
       <div class="product-details">
-        <h1 class="product-details__name reveal-text">INTRO</h1>
-        <p class="product-details__tagline fade-in">Eau de Parfum — 50ml</p>
-        <p class="product-details__price fade-in">$125</p>
+        <h1 class="product-details__name reveal-text" id="product-name">INTRO</h1>
+        <p class="product-details__tagline fade-in" id="product-tagline">Eau de Parfum — 50ml</p>
+        <p class="product-details__price fade-in" id="product-price">Kz 115.000</p>
 
-        <div class="product-details__description fade-in">
-          <p>The first impression. The opening note of intention.</p>
-          <p>INTRO is a statement of arrival — designed for the moment you step into yourself. Luminous, bold, and unmistakably present.</p>
-          <p style="margin-top: 1rem;">This is confidence, distilled.</p>
+        <div class="product-details__description fade-in" id="product-description">
+          <p>A primeira impressão. A nota inicial da intenção.</p>
+          <p>INTRO é uma declaração de chegada — concebido para o momento em que assumes quem és. Luminoso, ousado e inegavelmente presente.</p>
+          <p style="margin-top: 1rem;">Isto é confiança, destilada.</p>
         </div>
 
-        <ul class="product-details__specs fade-in">
-          <li>50ml / 1.7 fl. oz. Eau de Parfum</li>
-          <li>Long-lasting sillage</li>
-          <li>Glass bottle with OMR signature cap</li>
-          <li>Crafted with intention</li>
-          <li>Unisex — designed for presence</li>
+        <ul class="product-details__specs fade-in" id="product-specs">
+          <li>50ml Eau de Parfum</li>
+          <li>Estela duradoura</li>
+          <li>Frasco de vidro com tampa exclusiva OMR</li>
+          <li>Criado com intenção</li>
+          <li>Unissexo — concebido para a presença</li>
         </ul>
 
         <div class="product-details__ritual fade-in">
-          <p class="product-details__ritual-label">Ritual Use</p>
-          <p class="product-details__ritual-text">Apply to pulse points before the moments that matter — first meetings, quiet evenings, acts of self-renewal.</p>
+          <p class="product-details__ritual-label">Uso Ritual</p>
+          <p class="product-details__ritual-text" id="product-ritual">Aplica nos pontos de pulsação antes dos momentos que importam — primeiros encontros, fins de tarde tranquilos, actos de renovação pessoal.</p>
         </div>
 
         <!-- Add to Cart -->
-        <button class="btn-add-cart" id="add-to-cart">Add to Selection — $125</button>
+        <button class="btn-add-cart" id="add-to-cart">Adicionar à Selecção — Kz 115.000</button>
 
         <!-- Sold Out State -->
         <div class="sold-out-state" id="sold-out" style="display: none;">
-          <p class="sold-out-state__label">Sold Out</p>
-          <p class="sold-out-state__text">Be notified when INTRO returns.</p>
-          <button class="btn-notify" id="notify-btn">Notify Me</button>
+          <p class="sold-out-state__label">Esgotado</p>
+          <p class="sold-out-state__text">Sê notificado quando o produto regressar.</p>
+          <button class="btn-notify" id="notify-btn">Notificar-me</button>
         </div>
 
-        <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); cursor: pointer;" id="toggle-sold-out">
-          Demo: Toggle sold out state
+        <p class="product-details__toggle" id="toggle-sold-out">
+          Demo: Alternar estado de esgotado
         </p>
       </div>
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="footer footer--light">
+    <div class="container">
+      <p class="footer__brand-line">Usa a tua intenção.<br>Vive o teu ritual.</p>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__col-title">Loja</p>
+          <ul>
+            <li><a href="product.html?variant=intro" data-link>Eau de Parfum</a></li>
+            <li><a href="index.html#featured" data-link>Óleos Perfumados</a></li>
+            <li><a href="product.html?variant=copper" data-link>Velas</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Marca</p>
+          <ul>
+            <li><a href="philosophy.html" data-link>Sobre a OMR</a></li>
+            <li><a href="journal.html" data-link>Jornal</a></li>
+            <li><a href="#">Sustentabilidade</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Apoio</p>
+          <ul>
+            <li><a href="#">Envios e Devoluções</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Conecta-te</p>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 OMR Beauty Angola. Todos os direitos reservados.</p>
+        <p class="footer__credit">Criado por Josefa Félix</p>
+      </div>
+    </div>
+  </footer>
+
   <!-- Back to Top -->
   <div class="back-to-top back-to-top--light" id="back-to-top">
-    <a href="#" class="back-to-top__link">Return</a>
+    <a href="#" class="back-to-top__link">Voltar</a>
   </div>
 
   <!-- Cart Drawer -->
   <div class="cart-overlay" id="cart-overlay"></div>
   <aside class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer__header">
-      <span class="cart-drawer__title">Your Selection</span>
-      <button class="cart-drawer__close" id="cart-close">&times;</button>
+      <span class="cart-drawer__title">A Tua Selecção</span>
+      <button class="cart-drawer__close" id="cart-close" aria-label="Fechar">&times;</button>
     </div>
     <div class="cart-drawer__body">
       <div class="cart-drawer__empty" id="cart-empty">
-        <p class="cart-drawer__empty-text">Your selection is empty.</p>
-        <p class="cart-drawer__affirmation">Scent is the invisible ritual.</p>
+        <p class="cart-drawer__empty-text">A tua selecção está vazia.</p>
+        <p class="cart-drawer__affirmation">O aroma é o ritual invisível.</p>
       </div>
       <div id="cart-items" style="display: none; width: 100%;"></div>
     </div>
     <div class="cart-drawer__footer">
-      <button class="cart-drawer__checkout">Checkout</button>
+      <button class="cart-drawer__checkout">Finalizar Compra</button>
     </div>
   </aside>
 
   <script src="js/main.js"></script>
   <script>
-    // Toggle sold out demo
+    // --- Product variant catalog (PT-AO, Kwanza) ---
+    const PRODUCTS = {
+      'intro': {
+        name: 'INTRO',
+        tagline: 'Eau de Parfum — 50ml',
+        price: 'Kz 115.000',
+        description: [
+          'A primeira impressão. A nota inicial da intenção.',
+          'INTRO é uma declaração de chegada — concebido para o momento em que assumes quem és. Luminoso, ousado e inegavelmente presente.',
+          'Isto é confiança, destilada.'
+        ],
+        specs: ['50ml Eau de Parfum', 'Estela duradoura', 'Frasco de vidro com tampa exclusiva OMR', 'Criado com intenção', 'Unissexo — concebido para a presença'],
+        ritual: 'Aplica nos pontos de pulsação antes dos momentos que importam — primeiros encontros, fins de tarde tranquilos, actos de renovação pessoal.',
+        images: [
+          'assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2bc38d.jpg',
+          'assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2b81e8.jpg',
+          'assets/images/INTRO2_cb5184e5-d4ab-42fd-ad91-ff661ab22c249697.jpg',
+          'assets/images/INTRO3_6a28dbf1-6060-4782-904c-2c07d4865522c38d.jpg'
+        ]
+      },
+      'duo': {
+        name: 'DUO',
+        tagline: 'Eau de Parfum — 50ml',
+        price: 'Kz 115.000',
+        description: [
+          'A nota dupla. Equilíbrio entre força e suavidade.',
+          'DUO é a fragrância da dualidade — para quem habita várias versões de si próprio com confiança. Profundo, complexo e quietamente magnético.',
+          'Duas notas. Uma identidade.'
+        ],
+        specs: ['50ml Eau de Parfum', 'Estela duradoura', 'Frasco de vidro com tampa exclusiva OMR', 'Criado com intenção', 'Unissexo — concebido para a presença'],
+        ritual: 'Aplica antes das tuas conversas mais importantes. DUO é uma fragrância para se entrar numa sala e mudá-la.',
+        images: [
+          'assets/images/DUO_e4157c23-9c96-43ea-bd92-c96ff5f530166a9b.jpg',
+          'assets/images/DUO_e4157c23-9c96-43ea-bd92-c96ff5f53016817c.jpg',
+          'assets/images/DUO2_ef231a4d-6424-48e8-8202-39de6a27e40f6a9b.jpg',
+          'assets/images/DUO3_dc0c758f-caf6-46e6-bbde-5473db2b10056a9b.jpg'
+        ]
+      },
+      'fluid': {
+        name: 'FLUID',
+        tagline: 'Eau de Parfum — 50ml',
+        price: 'Kz 115.000',
+        description: [
+          'O movimento, captado em aroma.',
+          'FLUID é leveza e fluidez — uma fragrância que respira contigo. Fresca, etérea e sempre em movimento.',
+          'Liberdade, em forma de aroma.'
+        ],
+        specs: ['50ml Eau de Parfum', 'Estela duradoura', 'Frasco de vidro com tampa exclusiva OMR', 'Criado com intenção', 'Unissexo — concebido para a presença'],
+        ritual: 'Aplica de manhã, antes de o dia começar. FLUID é para os dias em que precisas de te mover com leveza.',
+        images: [
+          'assets/images/FLUID1_6e02ed26-6a03-4a2b-a277-897c7438d2a4ca01.jpg',
+          'assets/images/FLUID1_6e02ed26-6a03-4a2b-a277-897c7438d2a4b8a9.jpg',
+          'assets/images/FLUID1_6e02ed26-6a03-4a2b-a277-897c7438d2a43685.jpg',
+          'assets/images/FLUID131329.jpg'
+        ]
+      },
+      'copper': {
+        name: 'COPPER',
+        tagline: 'Vela Perfumada — 200g',
+        price: 'Kz 60.000',
+        description: [
+          'O ritual ao fim do dia.',
+          'COPPER é o calor de um final de tarde — notas de âmbar, madeira e especiarias subtis. Para os momentos em que o mundo se aquieta.',
+          'Acende e deixa-te ficar.'
+        ],
+        specs: ['200g de cera de soja natural', 'Duração aproximada: 50 horas', 'Recipiente em vidro fumado', 'Pavio de algodão sem chumbo', 'Made in Angola'],
+        ritual: 'Acende ao final do dia, num ambiente tranquilo. Deixa que o aroma marque o fim do dia e o início do descanso.',
+        images: [
+          'assets/images/Cb1fa.jpg',
+          'assets/images/Copper3b1fa.jpg',
+          'assets/images/Copper_Candle_19_horizontal7a6c.jpg',
+          'assets/images/C7b9b.jpg'
+        ]
+      },
+      'intro-oil': {
+        name: 'INTRO',
+        tagline: 'Óleo Perfumado — 8ml',
+        price: 'Kz 42.000',
+        description: [
+          'A versão portátil do ritual INTRO.',
+          'Óleo perfumado em roll-on, concentrado e duradouro. Para quem quer levar o aroma para todo o lado.'
+        ],
+        specs: ['Roll-on de 8ml', 'Fórmula concentrada em óleo', 'Sem álcool — suave na pele', 'Discreto, portátil, pessoal', 'Made in Angola'],
+        ritual: 'Aplica directamente nos pontos de pulsação. Reaplica ao longo do dia, sempre que precisares.',
+        images: [
+          'assets/images/OMR20267016.jpg',
+          'assets/images/OMR202624460.jpg',
+          'assets/images/OMR20262eaee.jpg',
+          'assets/images/OMR202631bb9.jpg'
+        ]
+      },
+      'duo-oil': {
+        name: 'DUO',
+        tagline: 'Óleo Perfumado — 8ml',
+        price: 'Kz 42.000',
+        description: [
+          'A dualidade, em formato portátil.',
+          'O ritual DUO em óleo concentrado. Para os dias em que precisas de o levar contigo.'
+        ],
+        specs: ['Roll-on de 8ml', 'Fórmula concentrada em óleo', 'Sem álcool — suave na pele', 'Discreto, portátil, pessoal', 'Made in Angola'],
+        ritual: 'Aplica directamente nos pontos de pulsação. Reaplica ao longo do dia, sempre que precisares.',
+        images: [
+          'assets/images/OMR20264f030.jpg',
+          'assets/images/OMR20264460.jpg',
+          'assets/images/OMR20264bb95.jpg',
+          'assets/images/OMR2026488a7.jpg'
+        ]
+      },
+      'fluid-oil': {
+        name: 'FLUID',
+        tagline: 'Óleo Perfumado — 8ml',
+        price: 'Kz 42.000',
+        description: [
+          'A leveza, em formato portátil.',
+          'O ritual FLUID em óleo concentrado. Movimento e frescura — para todo o lado.'
+        ],
+        specs: ['Roll-on de 8ml', 'Fórmula concentrada em óleo', 'Sem álcool — suave na pele', 'Discreto, portátil, pessoal', 'Made in Angola'],
+        ritual: 'Aplica directamente nos pontos de pulsação. Reaplica ao longo do dia, sempre que precisares.',
+        images: [
+          'assets/images/OMR202633cf8.jpg',
+          'assets/images/OMR20263d5d5.jpg',
+          'assets/images/OMR20265_ce5cafbb-a71d-4eb0-9d19-d1c027af529a3107.jpg',
+          'assets/images/OMR20265_ce5cafbb-a71d-4eb0-9d19-d1c027af529accfb.jpg'
+        ]
+      },
+      'cap': {
+        name: 'OMR',
+        tagline: 'Boné — Edição Limitada',
+        price: 'Kz 38.000',
+        description: [
+          'O símbolo OMR, em formato vestível.',
+          'Boné em algodão pesado, com logotipo bordado. Para quem usa o ritual além do aroma.'
+        ],
+        specs: ['100% algodão pesado', 'Logotipo OMR bordado', 'Tamanho único, ajustável', 'Edição limitada', 'Made in Angola'],
+        ritual: 'Usa em qualquer momento. O ritual estende-se para lá da fragrância.',
+        images: [
+          'assets/images/CAP_68229e31-81a1-49a6-b4da-5cf48715359b0080.jpg',
+          'assets/images/CAP_68229e31-81a1-49a6-b4da-5cf48715359b3a0f.jpg',
+          'assets/images/CAP_68229e31-81a1-49a6-b4da-5cf48715359ba6ec.jpg',
+          'assets/images/CAP_68229e31-81a1-49a6-b4da-5cf48715359b0080.jpg'
+        ]
+      }
+    };
+
+    // --- Load variant from URL ---
+    function getVariant() {
+      const params = new URLSearchParams(window.location.search);
+      const v = params.get('variant');
+      return PRODUCTS[v] ? v : 'intro';
+    }
+
+    function renderProduct(key) {
+      const p = PRODUCTS[key];
+      if (!p) return;
+
+      document.title = `${p.name} — OMR Beauty Angola`;
+      document.getElementById('product-name').textContent = p.name;
+      document.getElementById('product-tagline').textContent = p.tagline;
+      document.getElementById('product-price').textContent = p.price;
+
+      const desc = document.getElementById('product-description');
+      desc.innerHTML = p.description.map((line, i) =>
+        i === p.description.length - 1 ? `<p style="margin-top: 1rem;">${line}</p>` : `<p>${line}</p>`
+      ).join('');
+
+      document.getElementById('product-specs').innerHTML = p.specs.map(s => `<li>${s}</li>`).join('');
+      document.getElementById('product-ritual').textContent = p.ritual;
+
+      const cartBtn = document.getElementById('add-to-cart');
+      cartBtn.textContent = `Adicionar à Selecção — ${p.price}`;
+      cartBtn.dataset.productName = `${p.name} — ${p.tagline}`;
+      cartBtn.dataset.productPrice = p.price;
+
+      // Update gallery images
+      p.images.forEach((src, idx) => {
+        const img = document.getElementById(`gallery-${idx + 1}`);
+        if (img) {
+          img.src = src;
+          img.alt = `${p.name} — vista ${idx + 1}`;
+        }
+      });
+    }
+
+    const currentVariant = getVariant();
+    renderProduct(currentVariant);
+
+    // --- Toggle sold out demo ---
     const toggleBtn = document.getElementById('toggle-sold-out');
     const addToCart = document.getElementById('add-to-cart');
     const soldOut = document.getElementById('sold-out');
@@ -147,25 +378,32 @@
       });
     }
 
-    // Add to cart interaction
+    // --- Add to cart ---
+    let cartCount = 0;
+    const cartItemsContainer = [];
+
     if (addToCart) {
       addToCart.addEventListener('click', () => {
         const cartEmpty = document.getElementById('cart-empty');
         const cartItems = document.getElementById('cart-items');
+        const p = PRODUCTS[currentVariant];
 
-        cartItems.innerHTML = `
-          <div style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <p style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">INTRO — Eau de Parfum</p>
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.05em;">50ml &nbsp;&middot;&nbsp; $125</p>
+        cartItemsContainer.push(p);
+        cartCount++;
+
+        cartItems.innerHTML = cartItemsContainer.map(item => `
+          <div class="cart-item">
+            <p class="cart-item__name">${item.name} — ${item.tagline}</p>
+            <p class="cart-item__price">${item.price}</p>
           </div>
-          <p style="margin-top: 2rem; font-size: 0.8rem; font-style: italic; color: #B3A49A; text-align: center;">You chose with intention.</p>
-        `;
+        `).join('') + `<p class="cart-item__affirm">Escolheste com intenção.</p>`;
+
         cartEmpty.style.display = 'none';
         cartItems.style.display = 'block';
 
         document.getElementById('cart-drawer').classList.add('cart-drawer--active');
         document.getElementById('cart-overlay').classList.add('cart-overlay--active');
-        document.getElementById('cart-toggle').textContent = 'Cart (1)';
+        document.getElementById('cart-toggle').textContent = `Sacola (${cartCount})`;
       });
     }
   </script>
