@@ -2126,3 +2126,53 @@ button {
     transform: none !important;
   }
 }
+
+/* ─────────────────────────────────────────────
+   Checkout form (inside Cart Drawer)
+   ───────────────────────────────────────────── */
+.checkout-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.checkout-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.checkout-form__field span {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.checkout-form__field input,
+.checkout-form__field textarea {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--ivory);
+  padding: 0.7rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  outline: none;
+  border-radius: 2px;
+  resize: vertical;
+}
+.checkout-form__field input:focus,
+.checkout-form__field textarea:focus {
+  border-color: var(--taupe);
+}
+.checkout-form__field input::placeholder,
+.checkout-form__field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.checkout-form__error {
+  background: rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(185, 28, 28, 0.4);
+  color: #fecaca;
+  padding: 0.6rem 0.85rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}

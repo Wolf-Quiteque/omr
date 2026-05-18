@@ -6,7 +6,8 @@ export type CartItem = {
   id: string;
   name: string;
   tagline: string;
-  price: string;
+  price: string;     // pre-formatted "Kz 115.000" for display
+  priceKz: number;   // raw integer for totals/order creation
 };
 
 type CartState = {
@@ -16,6 +17,7 @@ type CartState = {
   addItem: (item: CartItem) => void;
   openDrawer: () => void;
   closeDrawer: () => void;
+  clear: () => void;
 };
 
 const CartContext = createContext<CartState | null>(null);
@@ -31,6 +33,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const openDrawer = useCallback(() => setDrawerOpen(true), []);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
+  const clear = useCallback(() => setItems([]), []);
 
   return (
     <CartContext.Provider
@@ -41,6 +44,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addItem,
         openDrawer,
         closeDrawer,
+        clear,
       }}
     >
       {children}

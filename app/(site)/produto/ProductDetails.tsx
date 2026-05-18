@@ -4,18 +4,21 @@ import { useState } from 'react';
 import { RevealText } from '@/components/RevealText';
 import { FadeIn } from '@/components/FadeIn';
 import { useCart } from '@/components/CartProvider';
-import type { ProductVariant } from './products';
+import { formatKz, type ProductRow } from '@/lib/supabase/types';
 
-export default function ProductDetails({ product }: { product: ProductVariant }) {
+export default function ProductDetails({ product }: { product: ProductRow }) {
   const { addItem } = useCart();
-  const [soldOut, setSoldOut] = useState(false);
+  const [soldOut, setSoldOut] = useState(!product.in_stock);
+
+  const priceLabel = formatKz(product.price_kz);
 
   const onAddToCart = () => {
     addItem({
       id: product.id,
       name: product.name,
       tagline: product.tagline,
-      price: product.price,
+      price: priceLabel,
+      priceKz: product.price_kz,
     });
   };
 
@@ -27,7 +30,11 @@ export default function ProductDetails({ product }: { product: ProductVariant })
           {product.images.map((src, i) => (
             <div className="product-gallery__image" key={`${src}-${i}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={`${product.name} — vista ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />
+              <img
+                src={src}
+                alt={`${product.name} — vista ${i + 1}`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
             </div>
           ))}
         </div>
@@ -41,12 +48,15 @@ export default function ProductDetails({ product }: { product: ProductVariant })
             {product.tagline}
           </FadeIn>
           <FadeIn as="p" className="product-details__price">
-            {product.price}
+            {priceLabel}
           </FadeIn>
 
           <FadeIn className="product-details__description">
             {product.description.map((line, i) => (
-              <p key={i} style={i === product.description.length - 1 ? { marginTop: '1rem' } : undefined}>
+              <p
+                key={i}
+                style={i === product.description.length - 1 ? { marginTop: '1rem' } : undefined}
+              >
                 {line}
               </p>
             ))}
@@ -65,7 +75,7 @@ export default function ProductDetails({ product }: { product: ProductVariant })
 
           {!soldOut ? (
             <button className="btn-add-cart" onClick={onAddToCart}>
-              Adicionar à Selecção — {product.price}
+              Adicionar à Selecção — {priceLabel}
             </button>
           ) : (
             <div className="sold-out-state" style={{ display: 'block' }}>

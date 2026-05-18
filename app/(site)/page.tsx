@@ -2,20 +2,28 @@ import Link from 'next/link';
 import { RevealText } from '@/components/RevealText';
 import { FadeIn } from '@/components/FadeIn';
 import ProductCard from '@/components/ProductCard';
+import { getProducts, pickFeatured } from '@/lib/products';
+import { formatKz } from '@/lib/supabase/types';
 
-export default function HomePage() {
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const products = await getProducts();
+  const parfumsAndCandles = [
+    ...pickFeatured(products, 'parfum', 3),
+    ...pickFeatured(products, 'candle', 1),
+  ];
+  const oilsAndAccessory = [
+    ...pickFeatured(products, 'oil', 3),
+    ...pickFeatured(products, 'accessory', 1),
+  ];
+
   return (
     <>
       {/* Hero with Video */}
       <section className="hero">
         <div className="hero__media">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/assets/images/headerwebb8554.jpg"
-          >
+          <video autoPlay muted loop playsInline poster="/assets/images/headerwebb8554.jpg">
             <source
               src="/assets/videos/55477736b1654023b3c186289ff97490/55477736b1654023b3c186289ff97490.HD-1080p-7.2Mbps-57332441a4f0.mp4"
               type="video/mp4"
@@ -43,8 +51,8 @@ export default function HomePage() {
         <div className="container container--narrow">
           <p className="brand-statement__text">
             A OMR Beauty é uma casa de fragrâncias de luxo construída sobre a presença, não sobre a
-            performance. Cada aroma é desenhado para ser usado como um ritual — silencioso, intencional
-            e profundamente pessoal.
+            performance. Cada aroma é desenhado para ser usado como um ritual — silencioso,
+            intencional e profundamente pessoal.
           </p>
         </div>
       </FadeIn>
@@ -61,34 +69,20 @@ export default function HomePage() {
             </FadeIn>
           </div>
           <div className="product-grid">
-            <ProductCard
-              href="/produto?variant=intro"
-              image="/assets/images/INTRO_c6d6f086-e4f0-46e4-8c7d-10fbba44eb2bc38d.jpg"
-              alt="INTRO Eau de Parfum"
-              name="INTRO — Eau de Parfum"
-              price="Kz 115.000"
-            />
-            <ProductCard
-              href="/produto?variant=duo"
-              image="/assets/images/DUO_e4157c23-9c96-43ea-bd92-c96ff5f530166a9b.jpg"
-              alt="DUO Eau de Parfum"
-              name="DUO — Eau de Parfum"
-              price="Kz 115.000"
-            />
-            <ProductCard
-              href="/produto?variant=fluid"
-              image="/assets/images/FLUID1_6e02ed26-6a03-4a2b-a277-897c7438d2a4ca01.jpg"
-              alt="FLUID Eau de Parfum"
-              name="FLUID — Eau de Parfum"
-              price="Kz 115.000"
-            />
-            <ProductCard
-              href="/produto?variant=copper"
-              image="/assets/images/Cb1fa.jpg"
-              alt="COPPER Vela"
-              name="COPPER — Vela"
-              price="Kz 60.000"
-            />
+            {parfumsAndCandles.length === 0 ? (
+              <EmptyState />
+            ) : (
+              parfumsAndCandles.map((p) => (
+                <ProductCard
+                  key={p.id}
+                  href={`/produto?variant=${p.slug}`}
+                  image={p.images[0] || '/assets/images/headerwebb8554.jpg'}
+                  alt={p.name}
+                  name={`${p.name} — ${p.tagline.split('—')[0].trim()}`}
+                  price={formatKz(p.price_kz)}
+                />
+              ))
+            )}
           </div>
         </div>
       </section>
@@ -175,38 +169,20 @@ export default function HomePage() {
         </div>
       </FadeIn>
 
-      {/* Oils Product Row */}
+      {/* Oils & Accessory Row */}
       <section className="featured" style={{ paddingTop: 'var(--space-xl)' }}>
         <div className="container">
           <div className="product-grid">
-            <ProductCard
-              href="/produto?variant=intro-oil"
-              image="/assets/images/OMR20267016.jpg"
-              alt="INTRO Óleo Perfumado"
-              name="INTRO — Óleo Perfumado"
-              price="Kz 42.000"
-            />
-            <ProductCard
-              href="/produto?variant=duo-oil"
-              image="/assets/images/OMR20264f030.jpg"
-              alt="DUO Óleo Perfumado"
-              name="DUO — Óleo Perfumado"
-              price="Kz 42.000"
-            />
-            <ProductCard
-              href="/produto?variant=fluid-oil"
-              image="/assets/images/OMR20266ccfb.jpg"
-              alt="FLUID Óleo Perfumado"
-              name="FLUID — Óleo Perfumado"
-              price="Kz 42.000"
-            />
-            <ProductCard
-              href="/produto?variant=cap"
-              image="/assets/images/CAP_68229e31-81a1-49a6-b4da-5cf48715359b0080.jpg"
-              alt="OMR Boné"
-              name="OMR — Boné"
-              price="Kz 38.000"
-            />
+            {oilsAndAccessory.map((p) => (
+              <ProductCard
+                key={p.id}
+                href={`/produto?variant=${p.slug}`}
+                image={p.images[0] || '/assets/images/headerwebb8554.jpg'}
+                alt={p.name}
+                name={`${p.name} — ${p.tagline.split('—')[0].trim()}`}
+                price={formatKz(p.price_kz)}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -236,5 +212,21 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div
+      style={{
+        gridColumn: '1 / -1',
+        padding: '3rem 1rem',
+        textAlign: 'center',
+        color: 'rgba(255,255,255,0.5)',
+        fontSize: '0.9rem',
+      }}
+    >
+      Catálogo a carregar — configura o Supabase em <code>.env.local</code> para ver os produtos.
+    </div>
   );
 }
