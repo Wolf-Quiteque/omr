@@ -3,7 +3,7 @@
    Lives apart from the storefront aesthetic.
    ───────────────────────────────────────────── */
 
-.admin {
+.admin, .admin-login {
   --admin-bg: #fafaf9;
   --admin-surface: #ffffff;
   --admin-border: #e7e5e4;
@@ -12,7 +12,9 @@
   --admin-accent: #1c1917;
   --admin-danger: #b91c1c;
   --admin-success: #15803d;
+}
 
+.admin {
   background: var(--admin-bg);
   color: var(--admin-text);
   min-height: 100vh;

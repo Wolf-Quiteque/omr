@@ -20,7 +20,6 @@ values
    "/assets/images/INTRO2_cb5184e5-d4ab-42fd-ad91-ff661ab22c249697.jpg",
    "/assets/images/INTRO3_6a28dbf1-6060-4782-904c-2c07d4865522c38d.jpg"]'::jsonb,
  'parfum', 1, true),
-
 ('duo', 'DUO', 'Eau de Parfum — 50ml', 115000,
  '["A nota dupla. Equilíbrio entre força e suavidade.",
    "DUO é a fragrância da dualidade — para quem habita várias versões de si próprio com confiança. Profundo, complexo e quietamente magnético.",
